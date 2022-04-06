@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: my-task-engine
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    name: defaultDataSource
+    url: jdbc:mysql://localhost:3306/practice?serverTimezone=UTC
+    username: root
+    password: Aa123456
+
+
+mybatis:
+  mapper-locations: classpath:mappers/*xml
+  type-aliases-package: com.effective.mytask.mytaskengine.mybatis.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
+    map-underscore-to-camel-case: true
+    call-setters-on-nulls: true
+
+logging:
+  level:
+    com.effective.mytask.mytaskengine: debug
+
+server:
+  port: 10111
